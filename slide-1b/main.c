@@ -10,7 +10,7 @@ typedef struct{
     int idade;
 }PESSOA;
 
-int calculaIdade(PESSOA fulano, int anoAtual, int mesAtual, int anoAtual);
+void calculaIdade(PESSOA *fulano, int anoAtual, int mesAtual, int diaAtual);
 
 int main()
 {
@@ -24,14 +24,20 @@ int main()
     newton.mes = 1;
     newton.ano = 1643;
 
-    einstein.idade = calculaIdade(einstein, ANOATUAL);
-    newton.idade = calculaIdade(newton, ANOATUAL);
+    calculaIdade(&einstein, ANOATUAL, MESATUAL, DIAATUAL);
+    calculaIdade(&newton, ANOATUAL, MESATUAL, DIAATUAL);
 
     printf("Idade de Einstein: %d\n", einstein.idade);
     printf("Idade de Newton: %d\n", newton.idade);
 }
 
-int calculaIdade(PESSOA fulano, int anoAtual, int mesAtual, int anoAtual)
+void calculaIdade(PESSOA *fulano, int anoAtual, int mesAtual, int diaAtual)
 {
-    return anoAtual - fulano.ano;
+    fulano->idade = anoAtual - fulano->ano;
+
+    if(fulano->mes > mesAtual)
+        fulano->idade--;
+    else
+        if(fulano->mes == mesAtual && fulano->dia > diaAtual)
+            fulano->idade--;
 }
