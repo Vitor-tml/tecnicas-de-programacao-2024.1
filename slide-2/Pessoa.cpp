@@ -1,5 +1,6 @@
 #include "Pessoa.h"
 #include <string.h>
+#include <stdio.h>
 
 Pessoa::Pessoa(int dia, int mes, int ano, const char *nome)
     {
@@ -11,17 +12,17 @@ Pessoa::Pessoa(int dia, int mes, int ano, const char *nome)
     }
 
 void Pessoa::calculaIdade(int diaAtual, int mesAtual, int anoAtual)
-    {
-        idadePessoa = anoAtual - anoPessoa;
+{
+    idadePessoa = anoAtual - anoPessoa;
 
-        if(mesAtual > mesPessoa)
+    if(mesAtual > mesPessoa)
+        idadePessoa--;
+    else
+        if(mesAtual == mesPessoa && diaPessoa > diaAtual)
             idadePessoa--;
-        else
-            if(mesAtual == mesPessoa && diaPessoa > diaAtual)
-                idadePessoa--;
-    }
+}
 
-int Pessoa::getIdade()
-    {
-        return idadePessoa;
-    }
+void Pessoa::informaIdade()
+{
+    printf("%s tem %d anos,\n", nomePessoa, idadePessoa);
+}

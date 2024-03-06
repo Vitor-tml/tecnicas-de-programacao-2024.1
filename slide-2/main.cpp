@@ -9,6 +9,6 @@ int main()
     einstein.calculaIdade(1, 1, 2024);
     newton.calculaIdade(1, 1, 2024);
 
-    printf("Einsten tem %d anos.\n", einstein.getIdade());
-    printf("Newton tem %d anos.\n", newton.getIdade());
+    einstein.informaIdade();
+    newton.informaIdade();
 }
