@@ -10,7 +10,7 @@ typedef struct{
     int idade;
 }PESSOA;
 
-int calculaIdade(PESSOA fulano, int anoAtual);
+int calculaIdade(PESSOA fulano, int anoAtual, int mesAtual, int anoAtual);
 
 int main()
 {
@@ -31,7 +31,7 @@ int main()
     printf("Idade de Newton: %d\n", newton.idade);
 }
 
-int calculaIdade(PESSOA fulano, int anoAtual)
+int calculaIdade(PESSOA fulano, int anoAtual, int mesAtual, int anoAtual)
 {
     return anoAtual - fulano.ano;
 }
