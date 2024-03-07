@@ -4,6 +4,11 @@
 
 Pessoa::Pessoa(int dia, int mes, int ano, const char *nome)
 {
+    inicializa(dia, mes, ano, nome);
+}
+
+void Pessoa::inicializa(int dia, int mes, int ano, const char *nome)
+{
     diaPessoa = dia;
     mesPessoa = mes;
     anoPessoa = ano;
@@ -15,7 +20,7 @@ void Pessoa::calculaIdade(int diaAtual, int mesAtual, int anoAtual)
 {
     idadePessoa = anoAtual - anoPessoa;
 
-    if(mesAtual > mesPessoa)
+    if(mesAtual < mesPessoa)
         idadePessoa--;
     else
         if(mesAtual == mesPessoa && diaPessoa > diaAtual)
