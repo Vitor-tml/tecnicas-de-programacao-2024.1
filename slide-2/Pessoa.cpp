@@ -7,6 +7,11 @@ Pessoa::Pessoa(int dia, int mes, int ano, const char *nome)
     inicializa(dia, mes, ano, nome);
 }
 
+Pessoa::~Pessoa()
+{
+
+}
+
 void Pessoa::inicializa(int dia, int mes, int ano, const char *nome)
 {
     diaPessoa = dia;

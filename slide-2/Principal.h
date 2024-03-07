@@ -10,5 +10,6 @@ private:
     int anoAtual = 2024;
 public:
     Principal();
+    ~Principal();
     void executar();
 };
