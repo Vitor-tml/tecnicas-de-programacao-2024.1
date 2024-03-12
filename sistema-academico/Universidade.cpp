@@ -26,3 +26,8 @@ void Universidade::imprimeNome()
 {
     std::cout << nomeUniversidade << std::endl;    
 }
+
+char* Universidade::getNome()
+{
+    return nomeUniversidade;
+}

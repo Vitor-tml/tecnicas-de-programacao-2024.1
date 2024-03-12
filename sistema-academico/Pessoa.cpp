@@ -36,3 +36,23 @@ void Pessoa::informaIdade()
 {
     std::cout << nomePessoa << " tem " << idadePessoa << " anos." << std::endl; 
 }
+
+void Pessoa::setUniversidade(Universidade *pUni)
+{
+    pUniversidadeFiliado = pUni;
+}
+
+void Pessoa::informaUniversidade()
+{
+    std::cout << nomePessoa << " trabalha na " << pUniversidadeFiliado->getNome() << std::endl;
+}
+
+void Pessoa::setDepartamento(Departamento *pDpto)
+{
+    pDepartamentoFiliado = pDpto;
+}
+
+void Pessoa::informaDepartamento()
+{
+    std::cout<< nomePessoa << " faz parte do departamento " << pDepartamentoFiliado->getNome() << std::endl;
+}

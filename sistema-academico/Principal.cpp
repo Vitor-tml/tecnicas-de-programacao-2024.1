@@ -11,20 +11,26 @@ vitor(31, 8, 2004, "Capivara")
 
     // UNIVERSIDADES
     utfpr.inicializa("Universdade Tecnolgica Federal do Parana");
+    puc.inicializa("UniEsquina");
+    positivo.inicializa("UniBairro");
+
+    // DEPARTAMENTO
+    dainf.inicializa("Departamento de Informatica", "DAINF");
+
+    //  RELAÇÃO DE OBJETOS
+    //Universdade
+    vitor.setUniversidade(&utfpr);
+    einsten.setUniversidade(&puc);
+    newton.setUniversidade(&positivo);
+    //Departamento
+    vitor.setDepartamento(&dainf);
 }
 
 Principal::~Principal()
 {
-    std::cout << "Bye bye" << std::endl;
+    //std::cout << "Bye bye" << std::endl;
 }
 void Principal::executar()
 {
-    vitor.calculaIdade(diaAtual, mesAtual, anoAtual);
-    vitor.informaIdade();
-    einsten.calculaIdade(diaAtual, mesAtual, anoAtual);
-    einsten.informaIdade();
-    newton.calculaIdade(diaAtual, mesAtual, anoAtual);
-    newton.informaIdade();
-
-    utfpr.imprimeNome();
+    vitor.informaDepartamento();
 }

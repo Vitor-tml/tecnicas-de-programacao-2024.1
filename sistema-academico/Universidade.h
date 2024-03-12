@@ -1,3 +1,4 @@
+#pragma once
 class Universidade
 {
 private:
@@ -9,4 +10,5 @@ public:
     ~Universidade();
     void inicializa(const char *nome);
     void imprimeNome();
+    char* getNome();
 };
