@@ -1,0 +1,26 @@
+{
+    // Configurações específicas do projeto
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/include"
+    ],
+    "C_Cpp.default.define": [],
+    "C_Cpp.default.compilerPath": "g++",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++17",
+
+    // Usar tabulações em vez de espaços para arquivos C e C++
+    "[cpp]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false
+    },
+    "[c]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false
+    },
+
+    // Usar tabulações em vez de espaços para arquivos Makefile
+    "[makefile]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false
+    }
+}
