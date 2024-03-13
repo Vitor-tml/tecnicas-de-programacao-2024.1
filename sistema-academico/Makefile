@@ -1,27 +1,55 @@
-# Lista de arquivos de origem
-SOURCES = main.cpp Principal.cpp Pessoa.cpp Universidade.cpp Departamento.cpp
+# Nome do projeto
+PROJECT=sistema_academico
 
-# Diretório de saída para os executáveis e objetos
-BIN_DIR = bin
+# Arquivos de cabeçalho
+H_SOURCE=$(wildcard ./include/*.h)
 
-# Nome do executável
-EXECUTABLE = $(BIN_DIR)/main
+# Arquivos de implementação
+CPP_SOURCE=$(wildcard ./src/*.cpp)
 
-# Lista de arquivos objeto
-OBJECTS = $(patsubst src/%.cpp, $(BIN_DIR)/%.o, $(SOURCES))
+# Arquivos de objeto
+#substitui o ./src por ./bin e o .cpp por .o
+OBJ=$(subst .cpp,.o,$(subst src,bin,$(CPP_SOURCE)))
 
-# Comando de compilação
-CXX = g++
-CXXFLAGS = -Wall -std=c++11
+# Compilador
+CXX=g++
 
-# Regra padrão para compilar arquivos .cpp
-$(BIN_DIR)/%.o: src/%.cpp
-    $(CXX) $(CXXFLAGS) -c $< -o $@
+# Flags do compilador
+CXX_FLAGS=-c     \
+          -Wall  \
+          -Wextra \
+		  -I./include/
 
-# Regra para construir o executável
-$(EXECUTABLE): $(OBJECTS)
-    $(CXX) $(CXXFLAGS) $^ -o $@
-    
-# Limpar arquivos intermediários e o executável
+# É chamado por default e pede as dependências de estrutura e do projeto
+all: estruturaDoProjeto $(PROJECT)
+
+# É chamado como dependência do all e pede como dependência a lista dentro da variável OBJ
+$(PROJECT): $(OBJ)
+	@ echo 'Linkando o projeto!'
+	$(CXX) $^ -o $@
+	@ echo ' '
+
+# Regra para qualquer chamada com final .o, depende da existência do .cpp e do .h de mesmo nome
+./bin/%.o: ./src/%.cpp ./include/%.h
+	@ echo 'Construindo binario do: $@'
+	$(CXX) -o $@ $< $(CXX_FLAGS)
+	@ echo ' '
+
+# Especial para o main
+./bin/main.o: ./src/main.cpp $(H_SOURCE)
+	@ echo 'Compilando a main'
+	$(CXX) -o $@ $< $(CXX_FLAGS)
+	@ echo ' '
+
+# Cacarecos
+estruturaDoProjeto:
+	@ mkdir -p bin
+	@ mkdir -p src
+	@ mkdir -p include
+
+# Limpa os arquivos de compilação
 clean:
-    rm -f $(OBJECTS) $(EXECUTABLE)
+	rm -rf ./bin/*.o $(PROJECT) *~
+
+# Evita que de algum bug caso tenha um all.c ou clean.c
+.PHONY: all clean

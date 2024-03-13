@@ -10,4 +10,4 @@ public:
     ~Departamento();
     char* getNome();
     void inicializa(const char *nome, const char *sigla);
-};
+}; 
