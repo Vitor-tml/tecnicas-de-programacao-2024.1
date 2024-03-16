@@ -16,8 +16,8 @@ CXX=g++
 
 # Flags do compilador
 CXX_FLAGS=-c     \
-          -Wall  \
-          -Wextra \
+          -Wall   \
+          -Wextra  \
 		  -I./include/
 
 # É chamado por default e pede as dependências de estrutura e do projeto

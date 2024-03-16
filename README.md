@@ -7,5 +7,4 @@ Aproveite!
 
 Links úteis:
 1. [Como Binários nascem](https://embarcados.com.br/introducao-ao-makefile/)
-	Como funciona o arquivo Makefile que você vai encontrar aqui.
-
+	-> como funciona o arquivo Makefile que você vai encontrar aqui.
