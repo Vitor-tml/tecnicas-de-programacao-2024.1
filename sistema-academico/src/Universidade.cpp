@@ -5,17 +5,31 @@
 Universidade::Universidade(const char *nome)
 {
     inicializa(nome);
+    pDpto = NULL;
 }
 
 Universidade::Universidade()
 {
     inicializa("");
 }
-
-Universidade::~Universidade()
+/*
+    Quando chama a destrutora explícitamente funciona melhor, mas não 100%
+    pode ter algo a ver com os departamentos serem destruidos primeiro?
+    O único problema é na destrutora
+*/
+Universidade::~Universidade() 
 {
-
+    // Departamento *aux = pDpto;
+    // Departamento *next;
+    // while (aux != nullptr)
+    // {
+    //     std::cout<<"Destrutora:\n"<<aux->getNome()<<std::endl;
+    //     next = aux->getProximo();
+    //     delete aux;
+    //     aux = next;
+    // }
 }
+
 
 void Universidade::inicializa(const char *nome)
 {
@@ -30,4 +44,24 @@ void Universidade::imprimeNome()
 char* Universidade::getNome()
 {
     return nomeUniversidade;
+}
+
+void Universidade::setDepartamento(const char *nome, const char *sigla)
+{
+    Departamento *aux = new Departamento();
+    aux->inicializa(nome, sigla);
+    aux->setProximo(pDpto);
+    pDpto = aux;
+    
+    // std::cout<<"Set: "<<aux->getNome()<<std::endl;
+}
+
+void Universidade::listaDepartamento()
+{   
+    Departamento *aux = pDpto;
+    while(aux != nullptr)
+    {
+        std::cout << aux->getNome() << std::endl;
+        aux = aux->getProximo();
+    }
 }

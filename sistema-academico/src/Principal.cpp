@@ -15,15 +15,17 @@ vitor(31, 8, 2004, "Capivara")
     positivo.inicializa("UniBairro");
 
     // DEPARTAMENTO
-    dainf.inicializa("Departamento de Informatica", "DAINF");
+    utfpr.setDepartamento("Departamento de Informatica", "DAINF");
+    utfpr.setDepartamento("Departamento de Matematica", "DAMAT");
+    utfpr.setDepartamento("Departamento de Fisica", "DAFIS");
 
     //  RELAÇÃO DE OBJETOS
-    //Universdade
-    vitor.setUniversidade(&utfpr);
-    einsten.setUniversidade(&puc);
+    //Universdade aluno
+    vitor.setRA(777);
+    einsten.setUniversidade(&utfpr);
     newton.setUniversidade(&positivo);
-    //Departamento
-    vitor.setDepartamento(&dainf);
+    //Departamento aluno
+    einsten.setDepartamento(&dainf);
 }
 
 Principal::~Principal()
@@ -32,5 +34,6 @@ Principal::~Principal()
 }
 void Principal::executar()
 {
-    vitor.informaDepartamento();
+    newton.getUniversidade();
+    std::cout << newton.getNome() << " trabalha na " << newton.getUniversidade() << std::endl;
 }

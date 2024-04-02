@@ -2,19 +2,23 @@
 #include "Pessoa.h"
 #include "Universidade.h"
 #include "Departamento.h"
+#include "Professor.h"
+#include "Aluno.h"
 
 class Principal
 {
 private:
-    Pessoa vitor;
-    Pessoa einsten;
-    Pessoa newton;
+    Aluno vitor;
+    Professor einsten;
+    Professor newton;
 
     Universidade utfpr;
     Universidade puc;
     Universidade positivo;
 
     Departamento dainf;
+    Departamento damat;
+    Departamento dafis;
 
     int diaAtual = 1;
     int mesAtual = 1;

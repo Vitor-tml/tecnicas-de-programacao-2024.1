@@ -20,32 +20,40 @@ CXX_FLAGS=-c     \
           -Wextra  \
 		  -I./include/
 
+# Cores para o echo
+# Cores para o echo
+BLUE_COLOR=\e[0;36m
+GREEN_COLOR=\e[0;31m
+PURPLE_COLOR=\e[0;33m
+NC=\e[0m
+
+
 # É chamado por default e pede as dependências de estrutura e do projeto
 all: estruturaDoProjeto $(PROJECT)
 
 # É chamado como dependência do all e pede como dependência a lista dentro da variável OBJ
 $(PROJECT): $(OBJ)
-	@ echo 'Linkando o projeto!'
+	@echo -e '${GREEN_COLOR}Linkando o projeto!${NC}'
 	$(CXX) $^ -o $@
-	@ echo ' '
+	@echo ' '
 
 # Regra para qualquer chamada com final .o, depende da existência do .cpp e do .h de mesmo nome
 ./bin/%.o: ./src/%.cpp ./include/%.h
-	@ echo 'Construindo binario do: $@'
+	@echo -e '${BLUE_COLOR}Construindo binario do: $@${NC}'
 	$(CXX) -o $@ $< $(CXX_FLAGS)
-	@ echo ' '
+	@echo ' '
 
 # Especial para o main
 ./bin/main.o: ./src/main.cpp $(H_SOURCE)
-	@ echo 'Compilando a main'
+	@echo -e '${PURPLE_COLOR}Compilando a main${NC}'
 	$(CXX) -o $@ $< $(CXX_FLAGS)
-	@ echo ' '
+	@echo ' '
 
 # Cacarecos
 estruturaDoProjeto:
-	@ mkdir -p bin
-	@ mkdir -p src
-	@ mkdir -p include
+	@mkdir -p bin
+	@mkdir -p src
+	@mkdir -p include
 
 # Limpa os arquivos de compilação
 clean:
