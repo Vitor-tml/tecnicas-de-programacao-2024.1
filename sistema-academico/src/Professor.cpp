@@ -28,12 +28,13 @@ char* Professor::getUniversidade()
 		return pUniversidadeFiliado->getNome();
 	else
 		std::cout << nomePessoa << "não está filido à universidade." << std::endl;
+	return NULL;
 }
 char* Professor::getDepartamento()
 {
 	if(pDptoFiliado != nullptr)
 		return pDptoFiliado->getNome();
 	else
-		std::cout << nomePessoa << "não está filido à departamento." << std::endl;
-		
+		std::cout << nomePessoa << "não está filido à departamento." << std::endl;	
+	return NULL;
 }

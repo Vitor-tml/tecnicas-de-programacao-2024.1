@@ -34,20 +34,20 @@ Departamento* Departamento::getProximo()
     return prox;
 }
 
-void Departamento::setDisciplina(const char *nome, const char *codigo, Professor *pProf)
-{
-    Disciplina *aux = new Disciplina;
-    aux->inicializa(nome, codigo, pProf);
-    aux->setProx(pDisciplinas);
-    pDisciplinas = aux;
-}
+// void Departamento::setDisciplina(const char *nome, const char *codigo, Professor *pProf)
+// {
+//     Disciplina *aux = new Disciplina;
+//     aux->inicializa(nome, codigo, pProf);
+//     aux->setProx(pDisciplinas);
+//     pDisciplinas = aux;
+// }
 
-void Departamento::listaDisciplinas()
-{
-    Disciplina *aux = pDisciplinas;
-    while (aux != nullptr)
-    {
-        aux->informaDisciplina();
-        aux = aux->getProx();
-    }
-}
+// void Departamento::listaDisciplinas()
+// {
+//     Disciplina *aux = pDisciplinas;
+//     while (aux != nullptr)
+//     {
+//         aux->informaDisciplina();
+//         aux = aux->getProx();
+//     }
+// }

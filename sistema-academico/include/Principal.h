@@ -8,10 +8,6 @@
 class Principal
 {
 private:
-    Aluno vitor;
-    Professor einsten;
-    Professor newton;
-
     Universidade utfpr;
     Universidade puc;
     Universidade positivo;
@@ -19,6 +15,10 @@ private:
     Departamento dainf;
     Departamento damat;
     Departamento dafis;
+
+    Aluno vitor;
+    Professor einsten;
+    Professor newton;
 
     int diaAtual = 1;
     int mesAtual = 1;
