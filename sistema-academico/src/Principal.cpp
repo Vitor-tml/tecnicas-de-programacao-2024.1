@@ -26,6 +26,9 @@ vitor(31, 8, 2004, "Capivara")
     newton.setUniversidade(&positivo);
     //Departamento aluno
     einsten.setDepartamento(&dainf);
+
+    // Cria disciplina
+    //dainf.setDisciplina("Tecnicas de Programacao", "Tecprog", &einsten);
 }
 
 Principal::~Principal()
@@ -34,6 +37,5 @@ Principal::~Principal()
 }
 void Principal::executar()
 {
-    newton.getUniversidade();
     std::cout << newton.getNome() << " trabalha na " << newton.getUniversidade() << std::endl;
 }

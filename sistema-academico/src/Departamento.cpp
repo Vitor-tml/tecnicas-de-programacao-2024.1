@@ -10,7 +10,14 @@ Departamento::Departamento(const char *nome, const char *sigla)
 
 Departamento::~Departamento()
 {
+    // Disciplina *next, *aux = pDisciplinas;
     
+    // while(aux != nullptr)
+    // {
+    //     next = aux->getProx();
+    //     delete aux;
+    //     aux = next;
+    // }
 }
 
 char* Departamento::getNome()
