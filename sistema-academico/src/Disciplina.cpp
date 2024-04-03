@@ -1,4 +1,6 @@
 #include "Disciplina.h"
+#include "Aluno.h"
+#include "Professor.h"
 #include <string.h>
 #include <iostream>
 #include <cstring>

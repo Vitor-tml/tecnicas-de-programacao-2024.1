@@ -1,6 +1,8 @@
 #pragma once
-#include "Professor.h"
-#include "Aluno.h"
+
+// Declaração antecipada (Forward declaration)
+class Aluno;
+class Professor;
 
 class Disciplina
 {
@@ -9,7 +11,7 @@ private:
 	char *codigoDisciplina;
 	Professor *pProfessor;
 	Disciplina *pProx;
-	// Aluno pAlunos;	
+	Aluno *pAlunos;	
 public:
 	Disciplina(const char *nome = "", const char *codigo = "", Professor *pProf = nullptr);
 	~Disciplina();
@@ -17,5 +19,5 @@ public:
 	void setProx(Disciplina *p);
 	Disciplina* getProx();
 	void informaDisciplina();
-	// void setAluno()
+	//void setAluno();
 };

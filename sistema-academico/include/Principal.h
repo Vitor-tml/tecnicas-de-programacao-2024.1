@@ -5,6 +5,9 @@
 #include "Professor.h"
 #include "Aluno.h"
 
+// ERRO DO DESALOCAR:
+// AO USAR UMA AUXILIAR ELE É DESALOCADO NO FINAL DA DESTRUTORA
+
 class Principal
 {
 private:
