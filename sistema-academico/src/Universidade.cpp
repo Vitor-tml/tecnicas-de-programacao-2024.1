@@ -1,6 +1,7 @@
 #include "Universidade.h"
 #include <string.h>
 #include <iostream>
+#include <cstring>
 
 Universidade::Universidade(const char *nome)
 {
@@ -64,4 +65,16 @@ void Universidade::listaDepartamento()
         std::cout << aux->getNome() << std::endl;
         aux = aux->getProximo();
     }
+}
+
+Departamento* Universidade::getDepartamento(const char *sigla)
+{
+    Departamento *aux = pDpto;
+
+    while(aux != nullptr)
+        if(std::strcmp(aux->getNome(), sigla))
+            return aux;
+    
+    std::cout << "Departamento nao encontrado." << std::endl;
+    return NULL;
 }

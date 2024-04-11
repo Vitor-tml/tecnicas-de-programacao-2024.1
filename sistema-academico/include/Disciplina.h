@@ -3,6 +3,7 @@
 // Declaração antecipada (Forward declaration)
 class Aluno;
 class Professor;
+class Departamento;
 
 class Disciplina
 {
@@ -12,6 +13,7 @@ private:
 	Professor *pProfessor;
 	Disciplina *pProx;
 	Aluno *pAlunos;	
+	Departamento *pDeptoAssociado;
 public:
 	Disciplina(const char *nome = "", const char *codigo = "", Professor *pProf = nullptr);
 	~Disciplina();
@@ -19,5 +21,6 @@ public:
 	void setProx(Disciplina *p);
 	Disciplina* getProx();
 	void informaDisciplina();
+	void setDepartamento(Departamento *p);
 	//void setAluno();
 };

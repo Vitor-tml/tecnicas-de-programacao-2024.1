@@ -24,11 +24,10 @@ vitor(31, 8, 2004, "Capivara")
     vitor.setRA(777);
     einsten.setUniversidade(&utfpr);
     newton.setUniversidade(&positivo);
-    //Departamento aluno
-    einsten.setDepartamento(&dainf);
+    // Departamento aluno
+    einsten.setDepartamento(utfpr.getDepartamento("DAINF"));
 
-    // Cria disciplina
-    //dainf.setDisciplina("Tecnicas de Programacao", "Tecprog", &einsten);
+    
 }
 
 Principal::~Principal()
@@ -37,5 +36,6 @@ Principal::~Principal()
 }
 void Principal::executar()
 {
-    std::cout << newton.getNome() << " trabalha na " << newton.getUniversidade() << std::endl;
+
+    //std::cout << newton.getNome() << " trabalha na " << newton.getUniversidade() << std::endl;
 }

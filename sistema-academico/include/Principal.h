@@ -15,13 +15,10 @@ private:
     Universidade puc;
     Universidade positivo;
 
-    Departamento dainf;
-    Departamento damat;
-    Departamento dafis;
-
     Aluno vitor;
     Professor einsten;
     Professor newton;
+
 
     int diaAtual = 1;
     int mesAtual = 1;

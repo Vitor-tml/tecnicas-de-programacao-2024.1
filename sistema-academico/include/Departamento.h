@@ -1,5 +1,7 @@
 #pragma once
-#include "Disciplina.h"
+
+class Disciplina;
+class Professor;
 
 class Departamento
 {

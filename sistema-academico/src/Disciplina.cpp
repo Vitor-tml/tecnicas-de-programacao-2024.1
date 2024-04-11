@@ -1,6 +1,7 @@
 #include "Disciplina.h"
 #include "Aluno.h"
 #include "Professor.h"
+#include "Departamento.h"
 #include <string.h>
 #include <iostream>
 #include <cstring>
@@ -12,11 +13,14 @@ Disciplina::Disciplina(const char *nome, const char *codigo, Professor *pProf)
 
 void Disciplina::inicializa(const char *nome, const char *codigo, Professor *pProf)
 {
-	char *nomeDisciplina = new char[std::strlen(nome)];
-	char *codigoDisciplina = new char[std::strlen(codigo)];
+	nomeDisciplina = new char[std::strlen(nome)];
+	codigoDisciplina = new char[std::strlen(codigo)];
+
 	strcpy(nomeDisciplina, nome);
 	strcpy(codigoDisciplina, codigo);
 	pProfessor = pProf;
+	pProx = nullptr;
+	pAlunos = nullptr;
 }
 
 Disciplina::~Disciplina()
@@ -36,5 +40,14 @@ Disciplina* Disciplina::getProx()
 
 void Disciplina::informaDisciplina()
 {
-	std::cout << nomeDisciplina << " - " << codigoDisciplina << "Lecionada por:" << pProfessor->getNome() << std::endl;	
+	if(nomeDisciplina != nullptr)
+		std::cout << nomeDisciplina << " - " << codigoDisciplina << " do Departamento " << pDeptoAssociado->getNome() << " Lecionada por: " << pProfessor->getNome() << std::endl;	
+	else
+		std::cout << "Disciplina não iniciada corretamente!" << std::endl;
+}
+
+void Disciplina::setDepartamento(Departamento *p)
+{
+	std::cout << "Nome departamento: " << p->getNome() << std::endl;
+	pDeptoAssociado = p;
 }

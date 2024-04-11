@@ -1,4 +1,5 @@
 #include "Departamento.h"
+#include "Disciplina.h"
 #include <string.h>
 #include <iostream>
 
@@ -6,6 +7,7 @@ Departamento::Departamento(const char *nome, const char *sigla)
 {
     inicializa(nome, sigla);
     prox = NULL;
+    pDisciplinas = nullptr;
 }
 
 Departamento::~Departamento()
@@ -45,6 +47,8 @@ void Departamento::setDisciplina(const char *nome, const char *codigo, Professor
 {
     Disciplina *aux = new Disciplina;
     aux->inicializa(nome, codigo, pProf);
+    aux->setDepartamento(this);
+    std::cout << "Nome departameto" << this->getNome() << std::endl;
     aux->setProx(pDisciplinas);
     pDisciplinas = aux;
 }

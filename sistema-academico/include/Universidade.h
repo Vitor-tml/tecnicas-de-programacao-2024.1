@@ -14,5 +14,6 @@ public:
     void imprimeNome();
     char* getNome();
     void setDepartamento(const char *nomeDpto, const char *siglaDpto);
+    Departamento *getDepartamento(const char *sigla);
     void listaDepartamento();
 };
