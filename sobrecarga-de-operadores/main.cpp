@@ -4,10 +4,10 @@ using namespace std;
 
 int main()
 {
-    Vetor a(1, 1, 1);
-    Vetor b(1, 2, 3);
-    Vetor c = a + b;
+    Vetor a(1, 9, 5);
+    Vetor b(3, 7, 8);
+    Vetor c(10, 4, 2);
     
-    cout << c << endl;
+    cout << determinante(a, b, c) << endl;
 }
 

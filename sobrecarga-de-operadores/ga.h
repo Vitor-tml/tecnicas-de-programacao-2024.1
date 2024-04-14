@@ -15,3 +15,17 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& saida, Vetor a);
+
+template <typename TipoGenerico>
+float determinante(TipoGenerico a, TipoGenerico b, TipoGenerico c)
+{
+    float det;
+    // Calcula o determinante usando a regra de Sarrus
+    det += a.x * b.y * c.z;
+    det += a.y * b.z * c.x;
+    det += a.z * b.x * c.y;
+    det -= a.z * b.y * c.x;
+    det -= a.x * b.z * c.y;
+    det -= a.y * b.x * c.z;
+    return det;
+}
