@@ -4,9 +4,9 @@ using namespace std;
 
 int main()
 {
-    Vetor a(1, 9, 5);
-    Vetor b(3, 7, 8);
-    Vetor c(10, 4, 2);
+    Vetor<int> a(1, 9, 5);
+    Vetor<int> b(3, 7, 8);
+    Vetor<int> c(10, 4, 2);
     
     cout << determinante(a, b, c) << endl;
 }
